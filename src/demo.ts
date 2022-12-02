@@ -1,13 +1,11 @@
-//@ts-check
-
 async () => {
   const myCart = [];
-  const products = [];
+  const products: string | any[] = [];
   const limit = 2;
 
   async function getProducts() {
-    const rta = await fetch("http://api.escuelajs.co/api/v1/products", {
-      method: "GET",
+    const rta = await fetch('http://api.escuelajs.co/api/v1/products', {
+      method: 'GET',
     });
     const data = await rta.json();
     products.concat(data);
@@ -20,10 +18,7 @@ async () => {
     return total;
   }
 
-  /**
-   * @param {number} index
-   */
-  function addProduct(index) {
+  function addProduct(index: number) {
     if (getTotal() <= limit) {
       myCart.push(products[index]);
     }
@@ -35,8 +30,8 @@ async () => {
   const total = getTotal();
   console.log(total);
   const person = {
-    name: "Nicolas",
-    lastName: "Molina",
+    name: 'Nicolas',
+    lastName: 'Molina',
   };
   const rta = `${person} - ${limit}`;
   console.log(rta);
