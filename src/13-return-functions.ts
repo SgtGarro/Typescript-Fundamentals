@@ -1,6 +1,6 @@
 (() => {
   const calcTotal = (prices: number[]): number => {
-    return prices.reduce((sum, tot) => (tot += sum), 0);
+    return prices.reduce((total, sum) => (total += sum), 0);
   };
 
   const printTotal = (prices: number[]): void => {
